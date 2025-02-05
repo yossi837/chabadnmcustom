@@ -1,0 +1,1053 @@
+<!-- Beginning of custom global footer box code editor additions -->
+
+
+
+
+<div id="video-popup" class="popup">
+  <div class="popup-content">
+    <button class="close">×</button>
+    <div class="video-container">
+      <iframe src="https://www.youtube.com/embed/zbA0ru1oR1Y?enablejsapi=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </div>
+    <div class="button-container">
+      <svg class="animated-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white">
+        <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/>
+      </svg>
+      <button class="register-button">Join the Course</button>
+    </div>
+  </div>
+</div>
+
+
+
+<style>
+/* Scroll Animations */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.animate-on-scroll.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Enhanced Button with Fill-up Effect */
+.slider .captionList a,
+.promo_slider .cycle-html-caption a,
+.cycle-html-caption > a,
+.slider .readMore,
+.slider a.readMore {
+  display: inline-block !important;
+  padding: 16px 40px !important;
+  margin: 25px 10px !important;
+  font-size: 1.3em !important;
+  font-weight: 900 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+  color: #1a237e !important;
+  background: #FFA500 !important;
+  border: none !important;
+  border-radius: 100px !important;
+  position: relative !important;
+  overflow: hidden !important;
+  text-decoration: none !important;
+  transform: scale(1) !important;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+  z-index: 1 !important;
+}
+
+/* Fill-up Effect */
+.slider .captionList a::before,
+.promo_slider .cycle-html-caption a::before,
+.cycle-html-caption > a::before,
+.slider .readMore::before,
+.slider a.readMore::before {
+  content: "" !important;
+  position: absolute !important;
+  left: 0 !important;
+  top: 0 !important;
+  width: 0% !important; /* Start with 0 width */
+  height: 100% !important;
+  background: linear-gradient(90deg, 
+    #FFB700 0%,
+    #FFC340 100%
+  ) !important;
+  transition: width 0.6s ease-in-out !important;
+  z-index: -1 !important;
+}
+
+/* Hover Effects */
+.slider .captionList a:hover,
+.promo_slider .cycle-html-caption a:hover,
+.cycle-html-caption > a:hover,
+.slider .readMore:hover,
+.slider a.readMore:hover {
+  transform: scale(1.05) !important;
+}
+
+.slider .captionList a:hover::before,
+.promo_slider .cycle-html-caption a:hover::before,
+.cycle-html-caption > a:hover::before,
+.slider .readMore:hover::before,
+.slider a.readMore:hover::before {
+  width: 100% !important; /* Fill up the entire button */
+}</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="custom-footer">
+    <div class="footer-title">Chabad of New Mexico</div>
+    <div class="footer-address">
+        <span>4000 San Pedro Northeast</span>
+        <span>Albuquerque, NM 87110</span>
+        <span>505-880-1181</span>
+    </div>
+    <div class="footer-policy">
+        <a href="/4026210" target="_blank">Privacy Policy</a>
+    </div>
+    <div class="social-icons">
+        <a href="https://www.facebook.com/chabadofnewmexico" class="fa fa-facebook" title="Facebook"></a>
+        <a href="https://wa.me/5058801181" class="fa fa-whatsapp" title="Whatsapp"></a>
+        <a href="https://www.instagram.com/chabadofnewmexico" class="fa fa-instagram" title="Instagram"></a>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="floating-contact-button">
+  <button class="contact-button">
+    <div class="contact-icon">
+      <svg viewBox="0 0 24 24">
+        <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H5.2L4 17.2V4h16v12zM7 9h2v2H7zm4 0h2v2h-2zm4 0h2v2h-2z"/>
+      </svg>
+    </div>
+    <span class="contact-text">Contact Us</span>
+  </button>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+
+  
+  // Scroll animations
+  console.log("Enhanced scroll animations initialized");
+  
+  // Intersection Observer to trigger animations
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active');
+        observer.unobserve(entry.target); // Stop observing once animated
+      }
+    });
+  }, { threshold: 0.15 }); // Trigger when 15% of the element is visible
+
+  // Select all major sections to animate
+  const elementsToAnimate = document.querySelectorAll(`
+    .banner-updates,
+    .sneak-peek-item,
+    .message.custom,
+    .icon-updates,
+    .promo_slider:not(:first-of-type),
+    .latest_photos,
+    .widget-4.subscribe,
+    .candlelighting,
+    .daily_thought,
+    .facebook_likebox
+  `);
+
+  // Add the animation class and observe each element
+  elementsToAnimate.forEach(element => {
+    // Skip if it's the hero section
+    if (!element.closest('.hp-row-first')) {
+      element.classList.add('animate-on-scroll');
+      observer.observe(element);
+    }
+  });
+});
+</script><script>
+// Ensure Subscribe Text Change
+document.addEventListener('DOMContentLoaded', function() {
+   const subscribeHeader = document.querySelector('.widget-4.subscribe .widget_header h5');
+   if(subscribeHeader) {
+       subscribeHeader.textContent = "Let's keep in touch";
+       subscribeHeader.style.fontSize = '2.5em';
+   }
+});
+</script><script>
+document.addEventListener('DOMContentLoaded', function() {
+  var popup = document.getElementById('video-popup');
+  var closeBtn = document.querySelector('.close');
+  var registerBtn = document.querySelector('.register-button');
+  var arrow = document.querySelector('.animated-arrow');
+  var iframe = document.querySelector('#video-popup iframe');
+
+  function isHomePage() {
+    return window.location.pathname === '/' || window.location.pathname === '/index.html';
+  }
+
+  function isFirstVisit() {
+    if (sessionStorage.getItem('visited')) {
+      return false;
+    } else {
+      sessionStorage.setItem('visited', 'true');
+      return true;
+    }
+  }
+
+  if (isHomePage() && isFirstVisit()) {
+    setTimeout(function() {
+      popup.style.display = 'block';
+      document.body.style.overflow = 'hidden';
+      if (iframe) {
+        iframe.src += '&autoplay=1&mute=1';
+      }
+    }, 2000);
+  }
+
+  closeBtn.onclick = function() {
+    popup.style.display = 'none';
+    document.body.style.overflow = '';
+    if (iframe) {
+      iframe.contentWindow.postMessage('{"event":"command","func":"stopVideo","args":""}', '*');
+    }
+  }
+
+  window.onclick = function(event) {
+    if (event.target == popup) {
+      popup.style.display = 'none';
+      document.body.style.overflow = '';
+      if (iframe) {
+        iframe.contentWindow.postMessage('{"event":"command","func":"stopVideo","args":""}', '*');
+      }
+    }
+  }
+
+  registerBtn.onclick = function() {
+    window.location.href = '/6747699';
+  }
+
+  function adjustCloseButton() {
+    if (window.innerWidth <= 768) {
+      closeBtn.style.top = '-50px';
+      closeBtn.style.right = '50%';
+      closeBtn.style.transform = 'translateX(50%)';
+    } else {
+      closeBtn.style.top = '';
+      closeBtn.style.right = '';
+      closeBtn.style.transform = '';
+    }
+  }
+
+  adjustCloseButton();
+  window.addEventListener('resize', adjustCloseButton);
+});
+</script><script>
+// Intersection Observer for scroll animations
+document.addEventListener('DOMContentLoaded', function() {
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active');
+        observer.unobserve(entry.target); // Stop observing once animated
+      }
+    });
+  }, { threshold: 0.15 }); // Trigger when 15% of the element is visible
+
+  // Select all major sections to animate
+  const elementsToAnimate = document.querySelectorAll(`
+    .banner-updates,
+    .sneak-peek-item,
+    .message.custom,
+    .icon-updates,
+    .promo_slider:not(:first-of-type),
+    .latest_photos,
+    .widget-4.subscribe,
+    .candlelighting,
+    .daily_thought,
+    .facebook_likebox
+  `);
+
+  // Add the animation class and observe each element
+  elementsToAnimate.forEach(element => {
+    // Skip if it's the hero section
+    if (!element.closest('.hp-row-first')) {
+      element.classList.add('animate-on-scroll');
+      observer.observe(element);
+    }
+  });
+});</script><script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Only run on homepage
+    if (window.location.pathname !== '/' && window.location.pathname !== '/index.html') return;
+
+    // Video configurations
+    const videoData = [
+        { src: "https://www1.clhosting.org/media/av/1299/qesb12999328.mp4", start: 138, duration: 12 }, // Drone video (shorter duration)
+        { src: "https://www1.clhosting.org/media/av/1307/Irvg13070329.mp4", start: 76, duration: 17 },  // Balloons video
+        { src: "https://www1.clhosting.org/media/av/1306/LTOB13065009.mp4", start: 26, duration: 50 }   // Third video
+    ];
+
+    // Remove any existing video-hero if present
+    const existingHero = document.querySelector('.video-hero');
+    if (existingHero) existingHero.remove();
+
+    // Create hero section
+    const videoHero = document.createElement('div');
+    videoHero.className = 'video-hero';
+    
+    // Create divider
+    const divider = document.createElement('div');
+    divider.className = 'hero-divider';
+
+    // Set up videos HTML
+    videoHero.innerHTML = `
+        <video id="heroVideo0" autoplay muted playsinline style="opacity: 0;">
+            <source src="${videoData[0].src}#t=${videoData[0].start}" type="video/mp4">
+        </video>
+        <video id="heroVideo1" muted playsinline style="opacity: 0;">
+            <source src="${videoData[1].src}#t=${videoData[1].start}" type="video/mp4">
+        </video>
+        <video id="heroVideo2" muted playsinline style="opacity: 0;">
+            <source src="${videoData[2].src}#t=${videoData[2].start}" type="video/mp4">
+        </video>
+        <div class="hero-content">
+            <h1>Chabad of New Mexico</h1>
+            <p>Your Jewish Home in the Southwest</p>
+        </div>
+        <svg class="scroll-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M7 13l5 5 5-5"/>
+            <path d="M7 6l5 5 5-5"/>
+        </svg>
+    `;
+
+    // Insert elements
+    document.body.insertBefore(videoHero, document.body.firstChild);
+    document.body.insertBefore(divider, videoHero.nextSibling);
+
+    const videos = [0, 1, 2].map(i => document.getElementById(`heroVideo${i}`));
+    let currentVideoIndex = 0;
+    let isTransitioning = false;
+
+    // Preload all videos
+    videos.forEach(video => video.load());
+
+    // Initial video fade in
+    videos[0].addEventListener('loadeddata', function() {
+        setTimeout(() => this.style.opacity = '1', 100);
+    });
+
+    function fadeIn(element) {
+        return new Promise(resolve => {
+            element.style.opacity = '1';
+            setTimeout(resolve, 1500);
+        });
+    }
+
+    function fadeOut(element) {
+        return new Promise(resolve => {
+            element.style.opacity = '0';
+            setTimeout(resolve, 1500);
+        });
+    }
+
+    // Shuffle remaining videos order
+    function getNextVideoIndex() {
+        if (currentVideoIndex === 0) {
+            return Math.random() < 0.5 ? 1 : 2;
+        }
+        return currentVideoIndex === 1 ? 2 : 1;
+    }
+
+    async function transitionToNextVideo() {
+        if (isTransitioning) return;
+        isTransitioning = true;
+
+        const currentVideo = videos[currentVideoIndex];
+        const nextIndex = getNextVideoIndex();
+        const nextVideo = videos[nextIndex];
+        const nextVideoData = videoData[nextIndex];
+
+        try {
+            nextVideo.currentTime = nextVideoData.start;
+            await nextVideo.play();
+            await fadeIn(nextVideo);
+            await fadeOut(currentVideo);
+            
+            currentVideo.pause();
+            currentVideoIndex = nextIndex;
+            isTransitioning = false;
+        } catch (err) {
+            console.error('Error in video transition:', err);
+            isTransitioning = false;
+        }
+    }
+
+    // Handle video transitions
+    videos.forEach((video, index) => {
+        video.addEventListener('timeupdate', function() {
+            if (this === videos[currentVideoIndex] && 
+                this.currentTime >= videoData[currentVideoIndex].start + videoData[currentVideoIndex].duration) {
+                transitionToNextVideo();
+            }
+        });
+    });
+
+    // Force play first video
+    videos[0].play().catch(err => console.error('Error playing first video:', err));
+
+    // Handle navigation bar transparency
+    const nav = document.querySelector('.navigation-bar');
+    if (nav) {
+        nav.classList.add('transparent');
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > videoHero.offsetHeight - 100) {
+                nav.classList.remove('transparent');
+            } else {
+                nav.classList.add('transparent');
+            }
+        });
+    }
+
+    // Smooth scroll on arrow click
+    const scrollArrow = document.querySelector('.scroll-arrow');
+    if (scrollArrow) {
+        scrollArrow.addEventListener('click', () => {
+            window.scrollTo({
+                top: window.innerHeight,
+                behavior: 'smooth'
+            });
+        });
+    }
+});</script><script>
+// Add this after creating videoHero and before adding event listeners
+const contentWrapper = document.createElement('div');
+contentWrapper.className = 'content-wrapper';
+
+// Move all content after videoHero into the wrapper
+let nextSibling = videoHero.nextSibling;
+while (nextSibling) {
+    const current = nextSibling;
+    nextSibling = nextSibling.nextSibling;
+    if (current !== divider) {
+        contentWrapper.appendChild(current);
+    }
+}
+
+// Insert the wrapper after the video hero
+document.body.insertBefore(contentWrapper, videoHero.nextSibling);
+
+// Smooth parallax effect
+window.addEventListener('scroll', function() {
+    const scrolled = window.pageYOffset;
+    const rate = scrolled * 0.5;
+    
+    if (rate <= window.innerHeight) {
+        contentWrapper.style.transform = `translateY(${rate}px)`;
+    }
+});</script><script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Add "Let's Go" text above scroll arrow
+    const scrollArrow = document.querySelector('.scroll-arrow');
+    if (scrollArrow) {
+        const letsGoText = document.createElement('div');
+        letsGoText.className = 'lets-go-text';
+        letsGoText.textContent = "Let's Explore";
+
+        // Insert the "Let's Go" text before the scroll arrow
+        scrollArrow.parentNode.insertBefore(letsGoText, scrollArrow);
+    }
+});
+</script><script>
+document.addEventListener('DOMContentLoaded', function() {
+    const videos = document.querySelectorAll('.video-hero video');
+    if (videos.length > 0) {
+        window.addEventListener('scroll', function() {
+            let scroll = window.pageYOffset;
+            videos.forEach(video => {
+                // Using 0.4 as per your manual adjustment
+                video.style.transform = `translate3d(-50%, calc(-50% + ${scroll * 0.4}px), 0)`;
+            });
+        });
+    }
+});
+</script><script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Only run on contact page
+    if (!document.querySelector('.feedback_form')) return;
+
+    // Create contact info section
+    const contactInfo = document.createElement('div');
+    contactInfo.className = 'contact-info-section';
+    contactInfo.innerHTML = `
+        <h2 style="font-size: 1.5rem; font-weight: 600; margin-bottom: 1.5rem; color: #1a237e;">
+            Contact Information
+        </h2>
+
+        <div class="contact-info-item">
+            <div class="contact-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"></path>
+                </svg>
+            </div>
+            <div>
+                <strong>Address</strong><br>
+                4000 San Pedro Northeast<br>
+                Albuquerque, NM 87110
+            </div>
+        </div>
+
+        <div class="contact-info-item">
+            <div class="contact-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"></path>
+                </svg>
+            </div>
+            <div>
+                <strong>Phone</strong><br>
+                <a href="tel:505-880-1181" style="color: #3949ab; text-decoration: none;">505-880-1181</a>
+            </div>
+        </div>
+
+        <a href="https://wa.me/5058801181" target="_blank" class="whatsapp-button">
+            <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+            </svg>
+            <div>
+                <strong>Chat on WhatsApp</strong>
+                <div style="font-size: 0.9rem; opacity: 0.9;">We'll try to answer as soon as possible</div>
+            </div>
+        </a>
+
+        <iframe 
+            id="mapFrame"
+            src="//www.chabad.org/centers/maps/i_map.asp?mosadids=444"
+        ></iframe>
+    `;
+
+    // Insert into sidebar
+    const sidebar = document.querySelector('#MosadInformation');
+    if (sidebar) {
+        sidebar.innerHTML = ''; // Clear original content
+        sidebar.appendChild(contactInfo);
+    }
+});
+</script><script>
+document.addEventListener('DOMContentLoaded', function () {
+    const formContainer = document.querySelector('.feedback_form');
+    if (formContainer) {
+        // Create the title section container
+        const titleSection = document.createElement('div');
+        titleSection.className = 'contact-title-section';
+
+        // Add the title
+        const title = document.createElement('h1');
+        title.className = 'contact-title';
+        title.textContent = "Contact Us Today!";
+
+        // Add the subtitle
+        const subtitle = document.createElement('p');
+        subtitle.className = 'contact-subtitle';
+        subtitle.textContent = "We’d love to hear from you. Fill out the form below, and we’ll respond as soon as possible.";
+
+        // Append title and subtitle to the title section
+        titleSection.appendChild(title);
+        titleSection.appendChild(subtitle);
+
+        // Insert the title section above the form
+        formContainer.insertAdjacentElement('beforebegin', titleSection);
+    }
+});
+</script><script>
+document.addEventListener('DOMContentLoaded', function() {
+    const heroTitle = document.querySelector('.video-hero .hero-content h1');
+    if (heroTitle && window.innerWidth <= 768) {
+        // Force "New Mexico" to be together
+        heroTitle.innerHTML = 
+            <span>Chabad of New Mexico</span>
+        `;
+    }
+});
+</script><script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Remove unnecessary quick links
+    const quickLinks = document.querySelector('.local-navigation-quick-links');
+    if (quickLinks) {
+        quickLinks.innerHTML = ''; // Clear existing links
+    }
+
+    // Move contact info section higher
+    const sidebar = document.querySelector('#MosadInformation');
+    const contactInfoSection = sidebar.querySelector('.contact-info-section');
+    
+    if (sidebar && contactInfoSection) {
+        // Move contact info to the top of the sidebar
+        sidebar.insertBefore(contactInfoSection, sidebar.firstChild);
+    }
+});
+</script><script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Remove entire sidebar local navigation section
+    const sidebarLocalNavigation = document.querySelector('.sidebar-local-navigation');
+    if (sidebarLocalNavigation) {
+        sidebarLocalNavigation.remove();
+    }
+
+    // Move contact info section higher
+    const sidebar = document.querySelector('#MosadInformation');
+    const contactInfoSection = sidebar.querySelector('.contact-info-section');
+    
+    if (sidebar && contactInfoSection) {
+        // Move contact info to the top of the sidebar
+        sidebar.insertBefore(contactInfoSection, sidebar.firstChild);
+    }
+});
+</script><script>
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.querySelector('form[name="feedback"]');
+    const submitButton = document.querySelector('.co_global_button button');
+
+    // Wrap existing text in a span
+    submitButton.innerHTML = `
+        <span class="button-text">${submitButton.textContent}</span>
+        <div class="loader">
+            <div class="loader-dot"></div>
+            <div class="loader-dot"></div>
+            <div class="loader-dot"></div>
+        </div>
+    `;
+
+    form.addEventListener('submit', function(e) {
+        // Check if all required fields are filled
+        const requiredFields = form.querySelectorAll('[required]');
+        let isValid = true;
+
+        requiredFields.forEach(field => {
+            // Trim the value and check if it's empty
+            if (!field.value.trim()) {
+                isValid = false;
+                field.classList.add('error');
+                // Optional: Add visual error indication
+                field.style.borderColor = 'red';
+            } else {
+                field.classList.remove('error');
+                field.style.borderColor = '';
+            }
+        });
+
+        // If form is not valid, prevent submission and stop loading
+        if (!isValid) {
+            e.preventDefault();
+            return;
+        }
+
+        // Prevent multiple submissions
+        if (submitButton.classList.contains('loading')) {
+            e.preventDefault();
+            return;
+        }
+
+        // Add loading state only if form is valid
+        submitButton.classList.add('loading');
+        submitButton.disabled = true;
+
+        // Allow default form submission to proceed
+        // The loading state will persist until page redirect
+        return true;
+    });
+
+    // Optional: Remove error styling when user starts typing
+    form.addEventListener('input', function(e) {
+        if (e.target.matches('[required]')) {
+            e.target.classList.remove('error');
+            e.target.style.borderColor = '';
+        }
+    });
+});
+</script><script>
+document.addEventListener('DOMContentLoaded', function() {
+    function adjustTitle() {
+        if (window.innerWidth <= 768) {
+            const title = document.querySelector('.hero-content h1');
+            if (title && !title.getAttribute('data-modified')) {
+                const text = title.textContent;
+                if (text.includes('Chabad of New Mexico')) {
+                    title.innerHTML = text.replace('Chabad of', 'Chabad of<br>');
+                    title.setAttribute('data-modified', 'true');
+                }
+            }
+        }
+    }
+    
+    adjustTitle();
+    window.addEventListener('resize', adjustTitle);
+});
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const buttonContainer = document.querySelector('.floating-contact-button');
+  const button = document.querySelector('.contact-button');
+  let isExpanded = false;
+  let rippleTimeout;
+  let lastScrollTop = 0;
+  let scrollTimeout;
+  let hideTimeout;
+  let userHasScrolled = false;
+  
+  // Scroll direction detection
+  let isScrollingUp = false;
+  let lastScrollPosition = window.pageYOffset;
+  
+  // Smart scroll detection
+  function handleScroll() {
+    const currentScroll = window.pageYOffset;
+    const headerHeight = document.querySelector('header')?.offsetHeight || 400;
+    
+    // Determine scroll direction
+    isScrollingUp = currentScroll < lastScrollPosition;
+    
+    // Show conditions:
+    // 1. Scrolled past header
+    // 2. Either scrolling up OR deep into the page
+    const shouldShow = currentScroll > headerHeight && 
+                      (isScrollingUp || currentScroll > headerHeight * 2);
+    
+    // Update button visibility
+    if (shouldShow) {
+      clearTimeout(hideTimeout);
+      buttonContainer.classList.remove('hiding');
+      buttonContainer.classList.add('visible');
+    } else {
+      buttonContainer.classList.add('hiding');
+      hideTimeout = setTimeout(() => {
+        buttonContainer.classList.remove('visible');
+      }, 400);
+    }
+    
+    // Collapse on mobile scroll
+    if (window.innerWidth <= 768 && Math.abs(currentScroll - lastScrollTop) > 50) {
+      if (isExpanded) toggleExpand();
+    }
+    
+    lastScrollPosition = currentScroll;
+    lastScrollTop = currentScroll;
+    userHasScrolled = true;
+  }
+
+  // Debounced scroll handler
+  function debouncedScroll() {
+    clearTimeout(scrollTimeout);
+    scrollTimeout = setTimeout(handleScroll, 100);
+  }
+
+  // Create ripple effect
+  function createRipple(event) {
+    const button = event.currentTarget;
+    const ripple = document.createElement('span');
+    const rect = button.getBoundingClientRect();
+    const size = Math.max(rect.width, rect.height);
+    const x = event.clientX - rect.left - size / 2;
+    const y = event.clientY - rect.top - size / 2;
+    
+    ripple.style.width = ripple.style.height = `${size}px`;
+    ripple.style.left = `${x}px`;
+    ripple.style.top = `${y}px`;
+    ripple.className = 'ripple';
+    
+    button.appendChild(ripple);
+    
+    clearTimeout(rippleTimeout);
+    rippleTimeout = setTimeout(() => ripple.remove(), 600);
+  }
+
+  // Toggle expanded state
+  function toggleExpand() {
+    isExpanded = !isExpanded;
+    button.classList.toggle('expanded');
+  }
+
+  // Event Listeners
+  window.addEventListener('scroll', debouncedScroll);
+  handleScroll(); // Initial check
+
+  // Desktop behavior
+  if (window.innerWidth > 768) {
+    buttonContainer.addEventListener('mouseenter', () => {
+      if (!isExpanded) toggleExpand();
+    });
+
+    buttonContainer.addEventListener('mouseleave', () => {
+      if (isExpanded) toggleExpand();
+    });
+  }
+
+  // Mobile behavior
+  button.addEventListener('click', (e) => {
+    createRipple(e);
+    
+    if (window.innerWidth <= 768) {
+      if (!isExpanded) {
+        toggleExpand();
+      } else {
+        window.location.href = 'https://www.chabadnm.org/tools/feedback.htm';
+      }
+    } else if (isExpanded) {
+      window.location.href = 'https://www.chabadnm.org/tools/feedback.htm';
+    }
+  });
+
+  // Handle window resize
+  let resizeTimeout;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(() => {
+      if (isExpanded && window.innerWidth <= 768) {
+        toggleExpand();
+      }
+    }, 250);
+  });
+
+  // Auto-hide after 5 seconds of inactivity
+  function startInactivityTimer() {
+    clearTimeout(hideTimeout);
+    hideTimeout = setTimeout(() => {
+      if (!isExpanded) {
+        buttonContainer.classList.add('hiding');
+        setTimeout(() => {
+          buttonContainer.classList.remove('visible');
+        }, 400);
+      }
+    }, 5000);
+  }
+
+  // Reset inactivity timer on user interaction
+  ['mousemove', 'click', 'touchstart', 'scroll'].forEach(event => {
+    document.addEventListener(event, () => {
+      if (userHasScrolled) {
+        startInactivityTimer();
+      }
+    });
+  });
+});
+</script><script>
+document.addEventListener("DOMContentLoaded", () => {
+  const paypalOption = document.querySelector('input[name="payment_method"][value="paypal"]');
+  const donateButton = document.querySelector(".donate-button");
+
+  // Function to update the button based on the selected payment method
+  const updateDonateButton = () => {
+    if (paypalOption.checked) {
+      donateButton.classList.add("paypal-selected");
+    } else {
+      donateButton.classList.remove("paypal-selected");
+    }
+  };
+
+  // Attach event listeners to the payment method radio buttons
+  const paymentOptions = document.querySelectorAll('input[name="payment_method"]');
+  paymentOptions.forEach((option) => {
+    option.addEventListener("change", updateDonateButton);
+  });
+
+  // Initial check on page load
+  updateDonateButton();
+});
+</script><script>
+// Add icons dynamically to existing labels
+document.addEventListener("DOMContentLoaded", function () {
+  // Scope only to the donate section
+  const donateSection = document.querySelector('#donate');
+
+  if (donateSection) {
+    // Add credit card icon
+    const creditCardLabel = donateSection.querySelector('label[for="credit-card"]');
+    if (creditCardLabel) creditCardLabel.classList.add('credit-card-icon');
+
+    // Add location icon
+    const addressLabel = donateSection.querySelector('label[for="address"]');
+    if (addressLabel) addressLabel.classList.add('location-icon');
+
+    // Add calendar icon
+    const calendarLabel = donateSection.querySelector('label[for="frequency-toggle"]');
+    if (calendarLabel) calendarLabel.classList.add('calendar-icon');
+
+    // Typewriter effect for the main heading
+    const heading = donateSection.querySelector('h1');
+    if (heading) {
+      const text = heading.textContent;
+      heading.textContent = '';
+      let i = 0;
+
+      const typeEffect = () => {
+        if (i < text.length) {
+          heading.textContent += text[i];
+          i++;
+          setTimeout(typeEffect, 50);
+        }
+      };
+
+      typeEffect();
+    }
+  }
+});
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const donateSection = document.querySelector("#donate"); // Target the #donate section
+    if (donateSection) {
+      const nextButton = donateSection.querySelector(".js-next-button");
+      if (nextButton) {
+        nextButton.innerHTML = `Next <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd" d="M10.293 2.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 11-1.414-1.414L14.586 10H4a1 1 0 110-2h10.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+        </svg>`;
+      }
+    }
+  });
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const submitButton = document.querySelector('.co_global_button button');
+    
+    if (submitButton) {
+        // Remove >> from submit text
+        const submitSpan = submitButton.querySelector('span');
+        if (submitSpan) {
+            submitSpan.textContent = submitSpan.textContent.replace('»', '').trim();
+        }
+
+        // Optional additional interactivity
+        submitButton.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-2px)';
+        });
+        
+        submitButton.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0)';
+        });
+    }
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const backToTopButton = document.createElement("img");
+    backToTopButton.id = "back-to-top";
+    backToTopButton.src = "https://static.thenounproject.com/png/1590829-512.png"; // Your icon
+    backToTopButton.alt = "Back to Top";
+    document.body.appendChild(backToTopButton);
+
+    const footer = document.querySelector("#custom-footer"); // Ensure this matches your footer's actual ID
+
+    window.addEventListener("scroll", function () {
+        const triggerPoint = document.body.scrollHeight * 0.3; // 40% down the page
+        const footerTop = footer.offsetTop;
+        const scrollPosition = window.scrollY + window.innerHeight;
+
+        // Show button when past 40% of page
+        if (window.scrollY > triggerPoint) {
+            backToTopButton.classList.add("show");
+        } else {
+            backToTopButton.classList.remove("show");
+        }
+
+        // Detect if button is overlapping the footer
+        if (scrollPosition >= footerTop) {
+            backToTopButton.classList.add("white"); // Change to white
+        } else {
+            backToTopButton.classList.remove("white"); // Back to default
+        }
+    });
+
+    // Scroll-to-top behavior
+    backToTopButton.addEventListener("click", function () {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+});
+</script>
+
+
+
+
+
+
+
+
