@@ -1,0 +1,159 @@
+  :root {
+            --color-green: #2E8B57;
+            --color-sage-green: #8FBC8F;
+            --color-light-green: #90EE90;
+            --color-dark-green: #006400;
+            --default-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Helvetica, Arial, sans-serif;
+            --font-lead: 'Libre Franklin', var(--default-font-family);
+            --max-width: 1600px;
+            --default-font-size: 18px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--default-font-family);
+            line-height: 1.6;
+        }
+
+        .main-container {
+            position: relative;
+            width: 100%;
+            margin: 0 auto;
+            background-color: #F0FFF0;
+            overflow: hidden;
+        }
+
+        .nav-wrapper {
+            padding: 0 120px;
+        }
+
+        .nav-container {
+            background: white;
+            padding: 20px 90px;
+            border-radius: 0 0 20px 20px;
+            max-width: var(--max-width);
+            margin: auto;
+        }
+
+        #menu {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .passover-title {
+            color: var(--color-dark-green);
+            font-size: 100px;
+            font-weight: 600;
+            font-family: var(--font-lead);
+            line-height: 1.2;
+        }
+
+        .with-text {
+            color: var(--color-sage-green);
+            font-size: 40px;
+            font-family: var(--font-lead);
+        }
+
+        .details-cta {
+            display: flex;
+            gap: 60px;
+            margin-top: 30px;
+        }
+
+        .cta-container {
+            display: inline-flex;
+            align-items: center;
+            gap: 20px;
+            padding: 10px 30px;
+            border-radius: 85px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .background-green {
+            background-color: var(--color-green);
+        }
+
+        .cta-text {
+            color: white;
+            font-family: 'Lexend', sans-serif;
+            font-size: var(--default-font-size);
+        }
+
+        .cta-icon-container {
+            background: white;
+            border-radius: 50%;
+            padding: 10px;
+        }
+
+        .dates-container {
+            display: flex;
+            gap: 30px;
+        }
+
+        .date-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .circle-icon {
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+        }
+
+        .date-text {
+            color: var(--color-dark-green);
+            font-family: var(--font-lead);
+        }
+
+        .join-us {
+            font-size: 45px;
+            font-family: var(--font-lead);
+            max-width: 800px;
+            margin: 50px auto;
+            text-align: center;
+        }
+
+        .green-highlight {
+            color: var(--color-green);
+        }
+
+        .text-image-container {
+            display: flex;
+            gap: 50px;
+            max-width: var(--max-width);
+            margin: 0 auto;
+            align-items: center;
+        }
+
+        .lead-subtext {
+            max-width: 500px;
+            color: #333;
+            font-family: 'Lexend', sans-serif;
+        }
+
+        .passover-img {
+            max-width: 400px;
+            border-radius: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .passover-title {
+                font-size: 60px;
+            }
+            .with-text {
+                font-size: 30px;
+            }
+            .text-image-container {
+                flex-direction: column;
+            }
+        }
