@@ -1,13 +1,12 @@
 :root {
-    --color-primary-green: #2E8B57;
-    --color-secondary-brown: #8B4513;
-    --color-accent-olive: #556B2F;
-    --color-background-light: #F0FFF0;
+    --color-primary: #006400;  /* Dark Green */
+    --color-secondary: #8B4513;  /* Saddle Brown */
+    --color-accent: #2E8B57;  /* Sea Green */
+    --color-background: #F0FFF0;  /* Honeydew */
     --color-text-dark: #2F4F4F;
-    --font-primary: 'Libre Franklin', sans-serif;
-    --font-secondary: 'Lexend', sans-serif;
-    --max-width: 1600px;
-    --default-font-size: 18px;
+    --font-primary: 'Merriweather', serif;
+    --font-secondary: 'Open Sans', sans-serif;
+    --max-width: 1400px;
 }
 
 * {
@@ -18,116 +17,148 @@
 
 body {
     font-family: var(--font-secondary);
-    background-color: var(--color-background-light);
+    background-color: var(--color-background);
     color: var(--color-text-dark);
     line-height: 1.6;
 }
 
-.main-container {
+.container {
     max-width: var(--max-width);
     margin: 0 auto;
+    padding: 0 20px;
+}
+
+.hero {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+    color: white;
+    text-align: center;
+    padding: 100px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background: url('passover-background.jpg') no-repeat center center;
     background-size: cover;
+    opacity: 0.2;
 }
 
-.nav-wrapper {
-    background-color: var(--color-primary-green);
-    padding: 15px 0;
+.hero-content {
+    position: relative;
+    z-index: 2;
 }
 
-.nav-container {
-    display: flex;
-    justify-content: center;
-    max-width: var(--max-width);
-    margin: 0 auto;
-}
-
-#menu {
-    display: flex;
-    list-style: none;
-    gap: 30px;
-}
-
-#menu a {
-    color: white;
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s ease;
-}
-
-.hero-section {
-    text-align: center;
-    padding: 100px 20px;
-    color: var(--color-secondary-brown);
-}
-
-.passover-title {
+.hero-title {
     font-family: var(--font-primary);
     font-size: 4.5rem;
     margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
 }
 
-.with-text {
+.hero-subtitle {
     font-size: 2.5rem;
     margin-bottom: 40px;
 }
 
-.cta-section {
+.cta-buttons {
     display: flex;
     justify-content: center;
     gap: 30px;
-    margin-bottom: 50px;
 }
 
-.cta-button {
+.btn {
     display: inline-block;
     padding: 15px 30px;
-    background-color: var(--color-primary-green);
-    color: white;
     text-decoration: none;
     border-radius: 50px;
-    transition: transform 0.3s ease;
+    transition: all 0.3s ease;
+    font-weight: bold;
 }
 
-.cta-button:hover {
-    transform: scale(1.05);
+.btn-primary {
+    background-color: var(--color-secondary);
+    color: white;
 }
 
-.event-sections {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    padding: 50px 20px;
+.btn-secondary {
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
 }
 
-.event-card {
+.section {
+    padding: 80px 0;
     background-color: white;
-    border-radius: 10px;
+}
+
+.section-title {
+    text-align: center;
+    font-family: var(--font-primary);
+    font-size: 3rem;
+    margin-bottom: 50px;
+    color: var(--color-primary);
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.feature {
+    text-align: center;
     padding: 30px;
+    background-color: var(--color-background);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.feature-icon {
+    font-size: 3rem;
+    color: var(--color-accent);
+    margin-bottom: 20px;
+}
+
+.testimonials {
+    background-color: var(--color-background);
+}
+
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.testimonial {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
 .footer {
-    background-color: var(--color-secondary-brown);
+    background-color: var(--color-primary);
     color: white;
-    padding: 50px 20px;
-    text-align: center;
+    padding: 50px 0;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
 }
 
 @media (max-width: 768px) {
-    .passover-title {
+    .hero-title {
         font-size: 3rem;
     }
 
-    .with-text {
-        font-size: 1.8rem;
-    }
-
-    .cta-section {
-        flex-direction: column;
-    }
-
-    .event-sections {
+    .features, .testimonial-grid {
         grid-template-columns: 1fr;
     }
 }
